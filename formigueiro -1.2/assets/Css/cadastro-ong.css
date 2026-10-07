@@ -1,0 +1,202 @@
+/* Formigueiro - Cadastro */
+:root {
+  --laranja: #d45f35;
+  --laranja-escuro: #bd4f27;
+  --fundo: #fcfaf5;
+  --titulo: #111827;
+  --texto: #374151;
+  --suave: #6b7280;
+  --borda: #e2e8f0;
+  --branco: #ffffff;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  min-height: 100vh;
+  font-family: "Manrope", system-ui, sans-serif;
+  color: var(--texto);
+  background: var(--fundo);
+}
+
+.tela { display: grid; grid-template-columns: 1.15fr 1fr; min-height: 100vh; }
+
+/* Painel esquerdo */
+.painel {
+  background: var(--laranja);
+  color: var(--branco);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 64px 56px;
+}
+.logo { display: flex; align-items: center; gap: 14px; margin-bottom: 40px; }
+.logo-icone {
+  width: 44px; height: 44px;
+  display: grid; place-items: center;
+  background: var(--branco);
+  color: var(--laranja);
+  border-radius: 12px;
+  font: 800 24px "Bricolage Grotesque", sans-serif;
+}
+.logo-nome { font: 700 21px "Bricolage Grotesque", sans-serif; }
+
+.painel h1 {
+  font: 800 clamp(34px, 4vw, 46px)/1.15 "Bricolage Grotesque", sans-serif;
+  max-width: 560px;
+  margin-bottom: 22px;
+}
+.painel p { max-width: 540px; font-size: 17px; line-height: 1.6; opacity: .85; }
+
+.selos { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 56px; }
+.selo {
+  display: flex; align-items: center; gap: 12px;
+  padding: 14px 20px;
+  background: rgba(255, 255, 255, .16);
+  border-radius: 14px;
+  font-size: 15px; font-weight: 700;
+}
+.selo svg { width: 22px; height: 22px; }
+
+/* Painel do formulário */
+.formulario { display: flex; align-items: center; padding: 48px 56px; }
+.formulario-conteudo { width: 100%; max-width: 440px; margin: 0 auto; }
+
+.formulario h2 { font: 800 32px "Bricolage Grotesque", sans-serif; color: var(--titulo); }
+.subtitulo { margin-top: 6px; font-size: 14.5px; color: var(--suave); }
+
+.foto { display: flex; align-items: center; gap: 20px; margin: 24px 0 22px; }
+.foto-circulo {
+  width: 64px; height: 64px;
+  display: grid; place-items: center;
+  background: #eef2f7;
+  border: 2px solid var(--borda);
+  border-radius: 50%;
+  color: #94a3b8;
+  cursor: pointer;
+}
+.foto-circulo svg { width: 22px; height: 22px; }
+.foto-texto { font-size: 13.5px; font-weight: 700; color: var(--laranja); cursor: pointer; }
+
+.rotulo { display: block; margin-bottom: 8px; font-size: 13.5px; font-weight: 700; color: var(--titulo); }
+
+.tipo { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 22px; }
+.tipo a {
+  padding: 13px;
+  text-align: center;
+  text-decoration: none;
+  font-weight: 700; font-size: 15px;
+  color: var(--suave);
+  background: var(--branco);
+  border: 1px solid var(--borda);
+  border-radius: 12px;
+  transition: border-color .2s, color .2s;
+}
+.tipo a:hover { border-color: var(--laranja); }
+.tipo a.ativo { color: var(--laranja); border-color: var(--laranja); }
+
+.campo { margin-bottom: 18px; }
+.campo label { display: block; margin-bottom: 8px; font-size: 13.5px; font-weight: 700; color: var(--texto); }
+.campo input {
+  width: 100%;
+  padding: 13px 16px;
+  font: 500 14.5px "Manrope", sans-serif;
+  color: var(--titulo);
+  background: var(--branco);
+  border: 1px solid var(--borda);
+  border-radius: 12px;
+  transition: border-color .2s, box-shadow .2s;
+}
+.campo input::placeholder { color: #9ca3af; }
+.campo input:focus { outline: none; border-color: var(--laranja); box-shadow: 0 0 0 3px rgba(212, 95, 53, .16); }
+
+.termos { display: flex; align-items: center; gap: 12px; margin: 6px 0 20px; font-size: 13px; cursor: pointer; }
+.termos input {
+  appearance: none;
+  flex: none;
+  width: 20px; height: 20px;
+  border: 2px solid var(--laranja);
+  border-radius: 5px;
+  background: #fbe4da;
+  cursor: pointer;
+}
+.termos input:checked {
+  background: var(--laranja) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='3.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 12l5 5 9-10'/%3E%3C/svg%3E") center / 14px no-repeat;
+}
+.termos input:focus-visible, .botao:focus-visible, .social a:focus-visible, .tipo a:focus-visible {
+  outline: 3px solid rgba(212, 95, 53, .4); outline-offset: 2px;
+}
+
+.botao {
+  width: 100%;
+  padding: 15px;
+  font: 700 16px "Manrope", sans-serif;
+  color: var(--branco);
+  background: var(--laranja);
+  border: 0;
+  border-radius: 14px;
+  cursor: pointer;
+  transition: background .2s;
+}
+.botao:hover { background: var(--laranja-escuro); }
+
+.divisor { display: flex; align-items: center; gap: 14px; margin: 22px 0; font-size: 12.5px; color: #94a3b8; }
+.divisor::before, .divisor::after { content: ""; flex: 1; height: 1px; background: var(--borda); }
+
+.social { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+.social a {
+  display: flex; align-items: center; justify-content: center; gap: 10px;
+  padding: 12px;
+  text-decoration: none;
+  font-size: 14px; font-weight: 600;
+  color: var(--texto);
+  background: var(--branco);
+  border: 1px solid var(--borda);
+  border-radius: 12px;
+  transition: border-color .2s;
+}
+.social a:hover { border-color: #cbd5e1; }
+.social svg { width: 20px; height: 20px; }
+
+/* Responsivo */
+@media (max-width: 900px) {
+  .tela { grid-template-columns: 1fr; }
+  .painel { padding: 40px 28px; }
+  .selos { margin-top: 28px; }
+  .formulario { padding: 36px 24px; }
+}
+@media (max-width: 480px) {
+  .social { grid-template-columns: 1fr; }
+}
+
+/* ---------- Estados de validação e mensagens (JS) ---------- */
+[hidden] { display: none !important; }
+
+.erro {
+  margin: -10px 0 16px;
+  font-size: 12.5px; font-weight: 600; line-height: 1.4;
+  color: #b42318;
+}
+.erro:empty { display: none; }
+.campo.invalido input { border-color: #d92d20; }
+.campo.invalido input:focus { box-shadow: 0 0 0 3px rgba(217, 45, 32, .16); }
+
+.aviso {
+  margin-bottom: 16px; padding: 12px 16px;
+  font-size: 14px; font-weight: 600; line-height: 1.4;
+  border-radius: 12px;
+}
+.aviso-sucesso { color: #1f6b3a; background: #e8f3ec; }
+.aviso-erro { color: #b42318; background: #fdecea; }
+.aviso-info { color: #92400e; background: #fff4e5; }
+
+.botao:disabled { opacity: .7; cursor: wait; }
+.botao:disabled:hover { background: var(--laranja); }
+
+/* Foto de perfil e termos */
+.foto-circulo { position: relative; overflow: hidden; }
+.foto-circulo img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.erro-foto { margin: -12px 0 18px; }
+.termos.invalido { margin-bottom: 6px; }
+.termos.invalido input { border-color: #d92d20; }
+.erro-termos { margin: 0 0 18px 32px; }
