@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Painel da ONG | Formigueiro</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@700;800&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/Css/painel-ong.css">
+  <script src="assets/Js/comum.js" defer></script>
+  <script src="assets/Js/painel.js" defer></script>
+</head>
+<body>
+
+  <header class="topo">
+    <div class="topo-conteudo">
+      <a href="home-ong.html" class="logo" aria-label="Formigueiro, página inicial">
+        <span class="logo-icone">F</span>
+        <span class="logo-texto">
+          <span class="logo-nome">Formigueiro</span>
+          <span class="logo-sub">Doações locais em Patos-PB</span>
+        </span>
+      </a>
+
+      <nav class="menu" aria-label="Navegação principal">
+        <a href="home-ong.html">Campanhas</a>
+        <a href="painel-ong.html" class="ativo" aria-current="page">Painel da ONG</a>
+        <a href="criar-campanha.html">Criar Campanha</a>
+      </nav>
+
+      <a href="perfil-ong.html" class="perfil" aria-label="Perfil da instituição">
+        <span class="perfil-nome">Prato Cheio</span>
+        <span class="avatar">DA</span>
+      </a>
+    </div>
+  </header>
+
+  <main class="pagina">
+    <h1>Painel da ONG</h1>
+    <p class="subtitulo">Gerencie as campanhas da <span id="nome-ong">Prato Cheio</span></p>
+
+    <section class="resumo" aria-label="Resumo">
+      <div class="resumo-card">
+        <strong class="resumo-numero cor-laranja" id="stat-ativas">0</strong>
+        <span>Campanhas Ativas</span>
+      </div>
+      <div class="resumo-card">
+        <strong class="resumo-numero cor-verde" id="stat-doacoes">0</strong>
+        <span>Doações Recebidas</span>
+      </div>
+      <div class="resumo-card">
+        <strong class="resumo-numero cor-amarelo">100%</strong>
+        <span>Transparência doações</span>
+      </div>
+    </section>
+
+    <h2 class="secao-titulo">Minhas Campanhas Criadas</h2>
+    <div class="lista" id="lista"></div>
+    <p class="vazio" id="vazio" hidden>Você ainda não criou nenhuma campanha. <a href="criar-campanha.html">Criar primeira campanha</a></p>
+
+    <div class="toast" id="toast" role="status" hidden></div>
+  </main>
+
+  <dialog class="modal" id="modal" aria-labelledby="modal-titulo">
+    <form id="form-recebimento" novalidate>
+      <h3 id="modal-titulo">Confirmar recebimento</h3>
+      <p class="modal-texto" id="modal-campanha"></p>
+      <label for="quantidade">Quantidade recebida</label>
+      <input type="number" id="quantidade" name="quantidade" min="1" step="1" inputmode="numeric" required>
+      <p class="erro" id="erro-quantidade" role="alert"></p>
+      <div class="modal-acoes">
+        <button type="button" class="btn btn-neutro" id="modal-cancelar">Cancelar</button>
+        <button type="submit" class="btn btn-principal">Confirmar</button>
+      </div>
+    </form>
+  </dialog>
+
+</body>
+</html>
