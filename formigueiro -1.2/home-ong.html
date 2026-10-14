@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Campanhas | Formigueiro</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@700;800&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/Css/home-ong.css">
+  <script src="assets/Js/comum.js" defer></script>
+  <script src="assets/Js/home.js" defer></script>
+</head>
+<body>
+
+  <header class="topo">
+    <div class="topo-conteudo">
+      <a href="home-ong.html" class="logo" aria-label="Formigueiro, página inicial">
+        <span class="logo-icone">F</span>
+        <span class="logo-texto">
+          <span class="logo-nome">Formigueiro</span>
+          <span class="logo-sub">Doações locais em Patos-PB</span>
+        </span>
+      </a>
+
+      <nav class="menu" aria-label="Navegação principal">
+        <a href="home-ong.html" class="ativo" aria-current="page">Campanhas</a>
+        <a href="painel-ong.html">Painel da ONG</a>
+        <a href="criar-campanha.html">Criar Campanha</a>
+      </nav>
+
+      <a href="perfil-ong.html" class="perfil" aria-label="Perfil da instituição">
+        <span class="perfil-texto">
+          <span class="perfil-nome" id="perfil-nome">Prato Cheio</span>
+          <span class="perfil-tipo">ONG Registrada</span>
+        </span>
+        <span class="avatar" id="perfil-avatar">DA</span>
+      </a>
+    </div>
+  </header>
+
+  <main class="pagina">
+
+    <aside class="lateral">
+      <div class="busca">
+        <label for="busca" class="lateral-titulo">Buscar</label>
+        <div class="busca-campo">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg>
+          <input type="search" id="busca" placeholder="Buscar por ONG..." autocomplete="off">
+        </div>
+      </div>
+
+      <div class="bairros">
+        <h2 class="lateral-titulo">Filtrar por Bairro</h2>
+        <ul class="bairros-lista" id="bairros-lista"></ul>
+      </div>
+    </aside>
+
+    <section class="conteudo">
+      <h1>Campanhas de Arrecadação</h1>
+      <p class="subtitulo">Encontre e ajude uma ONG de Patos-PB</p>
+
+      <div class="campanhas" id="campanhas"></div>
+      <p class="vazio" id="vazio" hidden>Nenhuma campanha encontrada. Tente outro bairro ou outro nome de ONG.</p>
+    </section>
+
+  </main>
+
+</body>
+</html>
